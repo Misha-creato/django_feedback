@@ -1,22 +1,17 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from feedback.models import Feedback
+from feedback.services import create_feedback_object
 
 
 class CreateFeedback(View):
-    model = Feedback
 
     def get(self, request, *args, **kwargs):
         return render(request=request, template_name='send_feedback.html')
 
     def post(self, request, *args, **kwargs):
         data = request.POST
-        self.model.objects.create(
-            title=data['title'],
-            text=data['text'],
-            full_name=data['full_name'],
-            contacts=data['contacts'],
-        )
+        create_feedback_object(data=data)
+
         return redirect('feedback_answer')
 
 
