@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Список заявок</title>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-5">Список заявок</h1>
+        <p class="lead mt-3">
+            Вы можете подать заявку. <button class="btn btn-primary">Подать</button>
+        </p>
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Статус</th>
+                    <th>Заголовок</th>
+                    <th>Время создания</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ for feedback in feedbacks }}
+                    <tr>
+                        <td>feedback.status</td>
+                        <td>feedback.title</td>
+                        <td>feedback.created_at</td>
+                    </tr>
+                {{ endfor }}
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
