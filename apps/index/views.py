@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from apps.feedback.models import Feedback
+from feedback.models import Feedback
 
 
 class Index(View):
