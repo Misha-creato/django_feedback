@@ -7,7 +7,7 @@ from feedback.views import (
 
 urlpatterns = [
     path(
-        '',
+        'send/',
         CreateFeedback.as_view(),
         name='send_feedback'
     ),
