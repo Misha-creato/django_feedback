@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Форма для отправки заявки</title>
-  <!-- Подключение Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,20 +16,16 @@
       <form id="contactForm" method="post">
         {% csrf_token %}
         <div class="form-group">
-          <label for="title">Заголовок:</label>
-          <input type="text" class="form-control" id="title" name="title" required>
+          <input type="text" class="form-control" name="title" required placeholder="Заголовок заявки">
         </div>
         <div class="form-group">
-          <label for="text">Текст:</label>
-          <textarea class="form-control" id="text" name="text" rows="4" required></textarea>
+          <textarea class="form-control" name="text" rows="4" required placeholder="Текст заявки"></textarea>
         </div>
         <div class="form-group">
-          <label for="fullName">ФИО:</label>
-          <input type="text" class="form-control" id="fullName" name="full_name" required>
+          <input type="text" class="form-control" name="full_name" required placeholder="Ваше ФИО">
         </div>
         <div class="form-group">
-          <label for="contactInfo">Контакты для связи:</label>
-          <input type="text" class="form-control" id="contactInfo" name="contacts" required>
+          <input type="text" class="form-control" name="contacts" required placeholder="Контакты для связи">
         </div>
         <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
       </form>
@@ -38,7 +33,6 @@
   </div>
 </div>
 
-<!-- Подключение Bootstrap JS и jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

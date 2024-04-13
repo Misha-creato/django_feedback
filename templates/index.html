@@ -10,7 +10,7 @@
     <div class="container text-center">
         <h1 class="mt-5">Список заявок</h1>
         <p class="lead mt-3">
-            Вы можете подать заявку. <button class="btn btn-primary">Подать</button>
+            Вы можете подать заявку здесь <a href="{%url 'send_feedback' %}" class="btn btn-primary">Подать</a>
         </p>
         <table class="table mt-4">
             <thead>
@@ -21,13 +21,13 @@
                 </tr>
             </thead>
             <tbody>
-                {{ for feedback in feedbacks }}
+                {% for feedback in feedbacks %}
                     <tr>
-                        <td>feedback.status</td>
-                        <td>feedback.title</td>
-                        <td>feedback.created_at</td>
+                        <td>{{feedback.status}}</td>
+                        <td>{{feedback.title}}</td>
+                        <td>{{feedback.created_at}}</td>
                     </tr>
-                {{ endfor }}
+                {% endfor %}
         </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
