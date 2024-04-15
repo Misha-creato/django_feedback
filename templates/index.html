@@ -23,7 +23,11 @@
             <tbody>
                 {% for feedback in feedbacks %}
                     <tr>
-                        <td>{{feedback.status}}</td>
+                        {% if feedback.is_resolved %}
+                        <td>Обработана</td>
+                        {% else %}
+                        <td>В обработке</td>
+                        {% endif %}
                         <td>{{feedback.title}}</td>
                         <td>{{feedback.created_at}}</td>
                     </tr>
