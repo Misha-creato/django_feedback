@@ -27,14 +27,11 @@ class Feedback(models.Model):
         verbose_name='Время создания',
     )
 
-    class Meta:
-        db_table = 'feedback'
-        verbose_name = 'Заявка'
-        verbose_name_plural = 'Заявки'
-
-    @property
-    def status(self):
-        return 'Обработана' if self.is_resolved else 'В обработке'
-
     def __str__(self):
         return self.title
+
+    class Meta:
+        db_table = 'feedback'
+        ordering = ['created_at']
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'
