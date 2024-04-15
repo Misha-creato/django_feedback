@@ -6,14 +6,9 @@ from feedback.models import Feedback
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = (
         'title',
-        'status',
+        'is_resolved',
         'created_at',
     )
     exclude = (
         'id',
     )
-
-    def status(self, obj):
-        return obj.status
-
-    status.short_description = 'Статус'
