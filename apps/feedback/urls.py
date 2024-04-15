@@ -9,11 +9,11 @@ urlpatterns = [
     path(
         'send/',
         CreateFeedback.as_view(),
-        name='send_feedback'
+        name='send_feedback',
     ),
     path(
         'answer/',
         feedback_answer_view,
-        name='feedback_answer'
+        name='feedback_answer',
     )
 ]
